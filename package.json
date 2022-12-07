@@ -10,6 +10,10 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/design-system/design-system.esm.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
   "dependencies": {
     "@emotion/css": "^11.10.5",
     "@stencil/core": "^2.13.0",
