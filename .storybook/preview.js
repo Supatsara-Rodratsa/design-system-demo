@@ -1,4 +1,4 @@
-import { defineCustomElements } from '../loader/index.d.ts';
+import { defineCustomElements } from '../loader';
 
 defineCustomElements();
 
