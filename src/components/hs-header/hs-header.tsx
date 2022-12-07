@@ -1,5 +1,7 @@
 import { Component, Element, h, Prop } from '@stencil/core';
-
+import { css } from '@emotion/css';
+import { ColorPrimary, ColorSuccess, FontHeading1 } from '../../design-tokens/js/variables.js';
+ 
 const ariaAttributes = [
   'aria-role'
 ];
@@ -7,7 +9,8 @@ const ariaAttributes = [
 @Component({
   tag: 'hs-header',
   styleUrl: 'hs-header.css',
-  shadow: true,
+  // shadow: true,
+  scoped: true
 })
 export class HsHeader {
 
@@ -15,10 +18,10 @@ export class HsHeader {
   hostElement: HTMLElement;
 
   @Prop({ reflect: true })
-  level: 1 | 2 | 3 | 4 | 5 | 6 = 1;
+  level: 1 | 2 | 3 | 4 | 5 | 6;
 
   @Prop({ reflect: true, attribute: "textAlignment" })
-  textAlignment: 'left' | 'right' | 'center' = 'left';
+  textAlignment: 'left' | 'right' | 'center' = null;
 
   headerAriaAttributes = {};
 
@@ -40,10 +43,14 @@ export class HsHeader {
 
   render() {
     const Tag = `h${this.level}`;
+    const tagStyle = css `
+      color: ${this.level === 1 ? ColorPrimary : ColorSuccess};
+      font-size: ${this.level === 1 ? `${FontHeading1.fontSize}px` : undefined};
+    `; 
     
     return (
       // Better to use this approach
-      <Tag role="heading" className={this.textAlignment ? `align-${this.textAlignment}` : null}>
+      <Tag role="heading" className={tagStyle}>
         <slot></slot>
       </Tag>
 

@@ -14,11 +14,15 @@
   text-align: right;
 }
 
-h1 {
+/* h1 {
   line-height: 1.2em;
   color: red;
-}
+} */
 
-::slotted(span) {
+/* ::slotted(span) {
   color: blue;
-}
+} */
+
+/* * {
+  color: var(--hs-color-primary);
+} */
