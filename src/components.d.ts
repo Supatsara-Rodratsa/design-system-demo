@@ -11,8 +11,14 @@ export namespace Components {
         "variant": string;
     }
     interface HsHeader {
-        "level": 1 | 2 | 3 | 4 | 5 | 6;
-        "textAlignment": 'left' | 'right' | 'center';
+        /**
+          * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
+         */
+        "level": number;
+        /**
+          * Provides support for implementing horizontal alignment to the text contained in the header.
+         */
+        "textAlign": 'left' | 'right' | 'center';
     }
 }
 export interface HsButtonCustomEvent<T> extends CustomEvent<T> {
@@ -44,8 +50,14 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface HsHeader {
-        "level"?: 1 | 2 | 3 | 4 | 5 | 6;
-        "textAlignment"?: 'left' | 'right' | 'center';
+        /**
+          * The `level` property allows users to indicate what header hierarchy this element is. It mus take a number from `1` to `6`.
+         */
+        "level"?: number;
+        /**
+          * Provides support for implementing horizontal alignment to the text contained in the header.
+         */
+        "textAlign"?: 'left' | 'right' | 'center';
     }
     interface IntrinsicElements {
         "hs-button": HsButton;

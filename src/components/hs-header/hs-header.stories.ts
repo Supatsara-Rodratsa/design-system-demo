@@ -1,24 +1,33 @@
 /**
- * This is a Storybook component Section. Frist you will want to create 
- * the default sidebar faceted menu entry below.
+ * STORYBOOK TEMPLATE - Copy this file into your newly generated component folder, rename it
+ * accordingly to match your component name and replace the `.template` suffix by '.ts' and then
+ * populate the testing stories following the instructions below.
  */
+
 export default {
-  // this creates a ‘Components’ folder and a 'Button' subfolder in Storybook's side menu
+  // This creates a ‘Components’ folder and a subfolder with the MyComponent menu item
+  // of in Storybook's side menu. Replace 'MyComponent' by the generic component name.
   title: 'Components/Header',
+  // Populate the `argTypes` property with knobs to customize the component.
+  // Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls#annotation
   argTypes: {
     text: {
       description: 'Transcluded text to be injected in the component slot',
-      defaultValue: 'Submit',
+      defaultValue: 'Lorem ipsum dolor sit amet',
+      control: { type: 'text' },
     },
-    level: {
-      options: [1, 2, 3, 4, 5, 6],
-      control: { type: 'select' },
-      description: 'The header level',
-    },
-    textAlignment: {
+    textAlign: {
       options: ['left', 'center', 'right'],
       control: { type: 'radio' },
-      description: 'Text alignment'
+      description: 'The header alignment',
+    },
+    level: {
+      control: {
+        type: 'number',
+        min: 1,
+        max: 6,
+      },
+      description: 'The header level (h1-h6)',
     },
   }
 };
@@ -28,7 +37,7 @@ export default {
  * can later on customize with different values for its attribute properties and events
  */
 const Template = (args) => `
-  <hs-header level="${args.level}" textAlignment="${args.textAlignment}">
+  <hs-header level="${args.level}" text-align="${args.textAlign}">
     ${args.text}
   </hs-header>
 `;
@@ -37,20 +46,12 @@ const Template = (args) => `
  * Now you can leverage the template above to generate multiple snapshots of your component
  * with distinct combinations of property values and event handlers. 
  * Names must be PascalCased and Storybook will split names by capitals.
- * IMPORTANT: Remember to export each template binding!
+ * IMPORTANT: Remember to export each template binding and replace {@link ComponentStory} by
+ * a proper 
  * Learn more about how to set up controls at https://storybook.js.org/docs/web-components/essentials/controls
  */
-export const Header1 = Template.bind({});
-Header1.args = {
-  text: 'This is header 1',
+export const ComponentStory = Template.bind({});
+ComponentStory.args = {
+  textAlign: 'left',
   level: 1,
-  textAlignment: 'left',
 };
-
-export const Header2 = Template.bind({});
-Header2.args = {
-  text: 'This is header 2',
-  level: 2,
-  textAlignment: 'left',
-};
-

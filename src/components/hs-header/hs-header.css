@@ -2,27 +2,14 @@
   display: block;
 }
 
-.align-center {
-  text-align: center;
+.align-right {
+  text-align: right;
 }
 
 .align-left {
   text-align: left;
 }
 
-.align-right {
-  text-align: right;
+.align-center {
+  text-align: center;
 }
-
-/* h1 {
-  line-height: 1.2em;
-  color: red;
-} */
-
-/* ::slotted(span) {
-  color: blue;
-} */
-
-/* * {
-  color: var(--hs-color-primary);
-} */
