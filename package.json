@@ -50,8 +50,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "transform-tokens": "node ./src/design-tokens/config/transform-tokens.js",
-    "build-storybook": "storybook build",
-    "serve-storybook": "serve storybook-static"
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
